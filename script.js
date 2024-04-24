@@ -1,28 +1,50 @@
-// Functions
-
+// variables
+let uploadedAudio = null;
 const value = document.querySelector("#value");
 const input = document.querySelector("#pi_input");
+const fileInput = document.querySelector("#fileInput");
 
+// functions
+
+// takes number from frequency and assigns it to a frequency variable
 value.textContent = input.value;
 input.addEventListener("input", (event) => {
-  value.textContent = event.target.value;
+    value.textContent = event.target.value;
 });
 
+// Function to handle file upload
+document.querySelector("#fileInput").addEventListener("change", function(event) {
+    const file = this.files[0]; // Get the selected file
+    if (file) {
+        // Create a FileReader object to read the file
+        const reader = new FileReader();
+        reader.onload = function(event) {
+        // Save the file data in uploadedAudio variable
+        uploadedAudio = event.target.result;
+        };
+        // Read the file as a data URL
+        reader.readAsDataURL(file);
+    }
+});
+
+
+// plays the selected audio file when button is pressed
 function playOnDemand() {
-    var music = new Audio('audio/notscarysound.mp3');
-    music.play();
+    if (uploadedAudio) {
+        const audio = new Audio(uploadedAudio);
+        audio.play();
+    }
 }
 
+// plays selected audio at random with a specific frequency
 function playRandomAudio() {
-    // 1 in 10000 chance to play audio
-    if (Math.random() < value.textContent) {
-      const audio = new Audio('audio/notscarysound.mp3'); // replace 'audio.mp3' with your audio file path
-      audio.play();
-      console.log("playing")
+    if (Math.random() < value.textContent && uploadedAudio) {
+        const audio = new Audio(uploadedAudio);
+        audio.play();
+        console.log("playing")
     }
     console.log("running...")
 }
 
 // Main
-
 setInterval(playRandomAudio, 1000); // call playRandomAudio function every second

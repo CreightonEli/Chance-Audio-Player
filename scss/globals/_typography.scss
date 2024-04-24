@@ -3,7 +3,7 @@
 }
 *::selection {
     background-color: var(--primary1);
-    color: var(--primary2);
+    color: var(--neutral1);
 }
 
 h1 {
@@ -14,11 +14,4 @@ h1 {
     h1 {
         font-size: 30pt;
     }
-}
-
-hr {
-    color: var(--neutral2);
-    border: none;
-    margin: 0 0 22px;
-    border-bottom: dotted 10px;
 }
