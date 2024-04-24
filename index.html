@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="dist/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <title>🥸 Silly Sound App</title>
+    <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <section>
+        <h1>🥸 Silly Sound App 🥸</h1>
+        <hr>
+        <div class="flex_container">
+            <button type="button" value="sound" onclick="playOnDemand()"><i class="ph ph-play"></i></button>
+            <input id="pi_input" type="range" min="0.0001" max="1" step="0.0001" />
+            <p>Frequency: <output id="value"></output></p>
+            <!-- <input type="file" accept="audio/*"> -->
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,24 @@
+* {
+    font-family: "Manrope", sans-serif;
+}
+*::selection {
+    background-color: var(--primary1);
+    color: var(--primary2);
+}
+
+h1 {
+    font-size: 20pt;
+    margin: 5px auto 16px;
+}
+@media (width > 505px) {
+    h1 {
+        font-size: 30pt;
+    }
+}
+
+hr {
+    color: var(--neutral2);
+    border: none;
+    margin: 0 0 22px;
+    border-bottom: dotted 10px;
+}
